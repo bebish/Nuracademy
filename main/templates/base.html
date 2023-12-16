@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курсы ораторского искусства</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="{% url 'home' %}" id="bashkybet-link">Башкы бет</a>
+                <a href="{% url 'courses' %}" id="courses-link">Биздин курстар</a>
+                <a href="{% url 'teachers' %}" id="teachers-link">Биздин мугалимдер</a>
+                <a href="{% url 'videos' %}" id="videos-link">Видео сабактар</a>
+            </div>
+
+              <!-- Используйте любой элемент для открытия боковой навигации -->
+            <div class="menu-toggle">
+                <span onclick="openNav()" style="font-size: 40px;">☰</span>
+            </div>
+
+            <div class="logo">
+                <img src="{% static 'images/logo.png' %}" alt="Логотип">
+            </div>
+
+            <div class="company-name">
+                <h1>Nur academy</h1>
+            </div>
+
+            <div class="login-section">
+                <a href="#" id="login-link">Кирүү</a>
+                <span class="divider">|</span>
+                <a href="#" id="register-link">Катталуу</a>
+            </div>
+        </div>
+
+        <!-- <nav class="mobile-menu">
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Наши курсы</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav> -->
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <section id="contact">
+            <h2>Байланыш маалыматтары</h2>
+            <address>
+                Email: <a href="mailto:info@oratorycourses.com">info@oratorycourses.com</a><br>
+                Телефон: +(996) 700 000 000
+            </address>
+
+            <div class="social-icons">
+                <a href="https://www.instagram.com/nur_academy/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==" target="_blank">
+                    <img src="{% static 'images/instagram.png' %}" alt="Instagram">
+                </a>
+                <a href="https://m.facebook.com/p/NUR-Academy-100063649494809/?locale=ms_MY" target="_blank">
+                    <img src="{% static 'images/facebook.png' %}" alt="Facebook">
+                </a>
+                <a href="https://wa.me/996709868000 " target="_blank">
+                    <img src="{% static 'images/whatsapp.png' %}" alt="Whatsapp">
+                </a>
+                <!-- Добавьте другие социальные сети по необходимости -->
+            </div>
+
+        </section>
+        <p>&copy; 2023 Оратордук чеберчилик курстары</p>
+    </footer>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+
+</html>

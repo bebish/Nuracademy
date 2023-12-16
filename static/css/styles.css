@@ -1,0 +1,352 @@
+  /* Боковое меню навигации */
+.sidenav {
+    height: 100%; /* 100% Полный рост */
+    width: 0; /* 0 ширина - измените это с помощью JavaScript */
+    position: fixed; /* Оставаться на месте */
+    z-index: 1; /* Оставайтесь на вершине */
+    top: 0; /* Оставайтесь на вершине */
+    left: 0;
+    background-color: #fefefe; /* Черный */
+    overflow-x: hidden; /* Отключить горизонтальную прокрутку */
+    padding-top: 60px; /* Поместите содержимое 60px сверху */
+    transition: 0.5s; /* 0.5 секунд эффект перехода, чтобы скользить в sidenav */
+  }
+  
+  /* Ссылки в меню навигации */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #030303;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* При наведении курсора мыши на навигационные ссылки измените их цвет */
+  .sidenav a:hover {
+    color: #959292;
+  }
+  
+  /* Положение и стиль кнопки закрытия (верхний правый угол) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Стиль содержимого страницы - используйте это, если вы хотите переместить содержимое страницы вправо при открытии боковой навигации */
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  
+  /* На небольших экранах, где высота меньше 450px, измените стиль sidenav (меньше отступов и меньший размер шрифта) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+
+* {box-sizing:border-box}
+
+/* Контейнер слайд-шоу */
+.slideshow-container {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+}
+
+/* Скрыть изображения по умолчанию */
+.mySlides {
+  display: none;
+}
+
+/* Вперед иназад кнопки */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Положение "next кнопки" справа */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* При наведении курсора добавьте черный цвет фона с немного прозрачным */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Подпись текст */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Номер текста (1/3 и т.д.) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Точки/пули/индикаторы */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Исчезающая анимация */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+
+
+
+body {
+    /* font-family: 'Arial', sans-serif; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%; /* Используется для включения прокрутки */
+    background: linear-gradient(55deg, #1f0455 0%, #330a5f 51%, #8f59c9 85%);
+
+    /* background-image: url('background2.png'); /* Замените 'your-image.jpg' на путь к вашему изображению */
+    /* background-size: cover; Это свойство масштабирует изображение так, чтобы оно полностью покрывало задний план */
+    /* background-position: center; */ 
+}
+
+header {
+    background-color: #fdfdfd;
+    color: #383232;
+    height: 90px;
+    padding-left: 40px; /* Отступ слева */
+    padding-right: 40px;
+    
+}
+
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.logo img {
+    max-width: 70px;
+    margin-top: 10px;
+
+}
+
+.logo {
+    /* Измените это значение на ваше усмотрение */
+    margin-left: 100;
+    /* border-radius: 100%;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);  */
+}
+
+
+.menu-toggle {
+    cursor: pointer;
+    font-size: 30px; /* Измените это значение на ваше усмотрение */
+    margin-right: 10px; /* Измените это значение на ваше усмотрение */
+}
+
+@font-face {
+    font-family: 'Whisper';
+    src: url('Whisper-Regular.ttf') format('truetype');
+    /* Добавьте другие форматы, если у вас есть: woff, ttf, etc. */
+}
+
+.company-name {
+    margin-right: 50px; /* Добавьте единицы измерения, например, px */
+    font-family: 'Whisper', sans-serif;
+    text-shadow: 0px 6px 6px rgba(0, 0, 0, 0.30);
+}
+
+
+.company-name-h {
+    margin-right: 75%; /* Добавьте единицы измерения, например, px */
+    font-family: 'Whisper', sans-serif;
+    text-shadow: 0px 6px 6px rgba(0, 0, 0, 0.30);
+}
+
+
+.login-section a {
+    color: #020202;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.login-section {
+    margin-left: 800px;
+
+}
+
+.login-section a:hover {
+  color: #959292;
+}
+
+.body{
+    margin: 50px;
+    color: #f2f2f2;
+}
+
+
+.divider {
+    color: #090909;
+    margin: 0 10px;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+
+
+.header-menu.visible {
+    display: block;
+}
+
+.dots {
+  padding-bottom: 10%;
+}
+
+
+#about {
+  /* text-align: center; Выравнивание текста по центру горизонтально */
+  padding: 40px; /* Добавьте отступы по вашему усмотрению */
+}
+
+#about h1 {
+  font-size: 70px; /* Измените размер заголовка по вашему усмотрению */
+  margin-bottom: 20px; /* Добавьте отступ вниз по вашему усмотрению */
+}
+
+#about p {
+  font-size: 16px; /* Измените размер текста по вашему усмотрению */
+  line-height: 1.5; /*Установите высоту строки для лучшей читаемости*/
+  padding: 40px;
+}
+
+#saamalyktar h2{
+  text-align: center;
+
+}
+
+footer {
+  /* position: fixed;  */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #383232;
+  background-color: #fdfdfd;
+  height: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+  /* Уберем отступ снизу, так как он не нужен при использовании position: fixed */
+  padding-bottom: 0;
+}
+
+.social-icons img {
+  margin-top: 10px;
+  width: 35px; /* Регулируйте размер иконок по вашему усмотрению */
+  height: auto; /* Поддержка соотношения сторон */
+  margin-right: 10px; /* Отступ между иконками */
+}
+
+
+#courses {
+  color: #fdfdfd;
+  padding: 40px;
+}
+
+#courses h1 {
+  font-size: 40px; /* Измените размер заголовка по вашему усмотрению */
+}
+
+#courses h3 {
+  font-size: 25px;
+  margin-top: 5%;
+}
+
+
+/* Стили для изображений учителей */
+.teacher img {
+  width: 180px; /* Устанавливает ширину изображения */
+  height: auto; /* Поддерживает соотношение сторон */
+  border-radius: 0%; /* Пример скругления углов для круглого изображения */
+  margin-bottom: 20px; /* Пример отступа снизу */
+}
+
+
+.teacher {
+  display: flex;
+  align-items: center;
+}
+
+.teacher h3 {
+  margin-right: 1%;
+  margin-left: 1%;
+
+  background-color: rgb(83, 62, 6);
+    padding: 10px;
+    margin-top: 10px;
+  
+}
+
+#teachers {
+  color: #fdfdfd;
+  margin-left: 10%;
+}
+
+#teachers h1 {
+  font-size: 50px;
+}

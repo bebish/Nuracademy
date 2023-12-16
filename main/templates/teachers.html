@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Контейнеры для шапки и футера -->
+    <div id="header-container"></div>
+
+    <section id="teachers">
+        <h1>Биздин мугалимдер</h1>
+        <!-- Содержимое страницы "Биздин мугалимдер" -->
+
+        <div class="teacher">
+            <img src="{% static 'images/arslan.png' %}" alt="Фотография учителя 1">
+            <h3> Арслан Ибрагимов</h3>
+            <p> Сүрдү жеңүү, Медитация</p>
+        </div>
+    
+        <!-- Пример второго учителя -->
+        <div class="teacher">
+            <img src="{% static 'images/chagaldak.png' %}" alt="Фотография учителя 2">
+            <h3>Чагалдак Замирбеков</h3>
+            <p>Речь, текст менен иштөө, туура дем алуу</p>
+        </div>
+    
+        <!-- Пример третьего учителя -->
+        <div class="teacher">
+            <img src="{% static 'images/maks.jpeg' %}" alt="Фотография учителя 3">
+            <h3>Максат Тулеев</h3>
+            <p>Камера алдында иштөө, ынандыруу техникасы</p>
+        </div>
+    
+        <!-- Добавьте других учителей по мере необходимости -->
+
+    </section>
+    {% endblock %}
