@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Контейнеры для шапки и футера -->
+    <div id="header-container"></div>
+
+    <section id="courses">
+        <h2>Видео сабактар</h2>
+        <!-- Содержимое страницы "Видео сабактар" -->
+        {% for video in videos %}
+            <h3>{{ video.title }}</h3>
+            <video width="640" height="360" controls>
+                <source src="{{ MEDIA_URL }}{{ video.video_file.url }}" type="video/mp4">
+                Ваш браузер не поддерживает тег video.
+            </video>
+            
+            
+        {% endfor %}
+    </section>
+{% endblock %}

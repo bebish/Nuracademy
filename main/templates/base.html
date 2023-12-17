@@ -19,7 +19,7 @@
                 <a href="{% url 'home' %}" id="bashkybet-link">Башкы бет</a>
                 <a href="{% url 'courses' %}" id="courses-link">Биздин курстар</a>
                 <a href="{% url 'teachers' %}" id="teachers-link">Биздин мугалимдер</a>
-                <a href="{% url 'videos' %}" id="videos-link">Видео сабактар</a>
+                <a href="{% url 'video_lessons' %}" id="videos-link">Видео сабактар</a>
             </div>
 
               <!-- Используйте любой элемент для открытия боковой навигации -->
@@ -38,7 +38,7 @@
             <div class="login-section">
                 <a href="#" id="login-link">Кирүү</a>
                 <span class="divider">|</span>
-                <a href="#" id="register-link">Катталуу</a>
+                <a href="{% url 'register' %}" id="register-link">Катталуу</a>
             </div>
         </div>
 
