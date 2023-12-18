@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import VideoTutorial
-from .models import Video
+from .models import Video, Teacher
 
 def home_view(request):
     return render(request, 'index.html')
@@ -35,3 +35,7 @@ def register_view(request):
 def video_lessons(request):
     videos = Video.objects.all()
     return render(request, 'video_lessons.html', {'videos': videos})
+
+def teachers_list(request):
+    teachers = Teacher.objects.all()
+    return render(request, 'teachers.html', {'teachers': teachers})

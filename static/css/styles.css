@@ -350,3 +350,37 @@ footer {
 #teachers h1 {
   font-size: 50px;
 }
+
+
+/* Добавьте следующие стили в ваш файл CSS */
+
+.teachers-container {
+  display: flex;
+  justify-content: space-around; /* Измените на space-between, если вы хотите больше пространства между учителями */
+  flex-wrap: wrap;
+}
+
+.teacher {
+  text-align: center;
+  margin: 10px; /* Регулирует отступ между учителями */
+}
+
+.teacher img {
+  width: 100px; /* Установите ширину по вашему усмотрению */
+  height: auto;
+  border-radius: 50%; /* Округление углов для изображения */
+}
+
+#register-link {
+  display: inline-block;
+  padding: 10px 20px; /* Регулирует отступы внутри кнопки */
+  border: 2px solid yellow; /* Толщина и цвет рамки */
+  background-color: yellow; /* Цвет фона кнопки */
+  text-decoration: none;
+  color: black; /* Цвет текста кнопки */
+  border-radius: 5px; /* Закругленные углы */
+}
+
+#register-link:hover {
+  background-color: darkyellow; /* Измененный цвет фона при наведении */
+}

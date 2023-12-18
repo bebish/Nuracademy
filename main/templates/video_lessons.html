@@ -9,11 +9,13 @@
         <h2>Видео сабактар</h2>
         <!-- Содержимое страницы "Видео сабактар" -->
         {% for video in videos %}
+            <div class="video_lesson">
             <h3>{{ video.title }}</h3>
             <video width="640" height="360" controls>
                 <source src="{{ MEDIA_URL }}{{ video.video_file.url }}" type="video/mp4">
                 Ваш браузер не поддерживает тег video.
             </video>
+            </div>
             
             
         {% endfor %}

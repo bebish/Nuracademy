@@ -9,27 +9,19 @@
         <h1>Биздин мугалимдер</h1>
         <!-- Содержимое страницы "Биздин мугалимдер" -->
 
-        <div class="teacher">
-            <img src="{% static 'images/arslan.png' %}" alt="Фотография учителя 1">
-            <h3> Арслан Ибрагимов</h3>
-            <p> Сүрдү жеңүү, Медитация</p>
+        <div class="teachers-container">
+            {% for teacher in teachers %}
+                <div class="teacher">
+                    {% if teacher.photo %}
+                        <img src="{{ teacher.photo.url }}" alt="Фотография учителя {{ teacher.name }}">
+                    {% else %}
+                        <img src="{% static 'images/default_teacher_photo.png' %}" alt="Фотография учителя {{ teacher.name }}">
+                    {% endif %}
+                    <h3>{{ teacher.name }}</h3>
+                    <p>{{ teacher.subject }}</p>
+                </div>
+                <p class="teacher_desc">{{ teacher.description }}</p>
+            {% endfor %}
         </div>
-    
-        <!-- Пример второго учителя -->
-        <div class="teacher">
-            <img src="{% static 'images/chagaldak.png' %}" alt="Фотография учителя 2">
-            <h3>Чагалдак Замирбеков</h3>
-            <p>Речь, текст менен иштөө, туура дем алуу</p>
-        </div>
-    
-        <!-- Пример третьего учителя -->
-        <div class="teacher">
-            <img src="{% static 'images/maks.jpeg' %}" alt="Фотография учителя 3">
-            <h3>Максат Тулеев</h3>
-            <p>Камера алдында иштөө, ынандыруу техникасы</p>
-        </div>
-    
-        <!-- Добавьте других учителей по мере необходимости -->
-
     </section>
-    {% endblock %}
+{% endblock %}
