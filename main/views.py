@@ -1,6 +1,6 @@
-from django.shortcuts import render
-from .models import VideoTutorial
+from django.shortcuts import render, redirect
 from .models import Video, Teacher
+from .forms import CustomUserForm
 
 def home_view(request):
     return render(request, 'index.html')
@@ -11,26 +11,17 @@ def courses_view(request):
 def teachers_view(request):
     return render(request, 'teachers.html')
 
-def videos_view(request):
-    return render(request, 'videos.html')
-
-
 def register_view(request):
-    # Обработка запроса регистрации
-    # Возможно, вам нужно проверить метод запроса (GET или POST) и обработать данные формы
     if request.method == 'POST':
-        # Обработка данных формы регистрации
-        pass
+        form = CustomUserForm(request.POST, request.FILES)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.save()
+            return redirect('register_success')  # Перенаправление на страницу успешной регистрации
     else:
-        # Отображение формы регистрации (GET запрос)
-        return render(request, 'register.html')
+        form = CustomUserForm()
 
-# def video_tutorial_list(request):
-#     video_tutorials = VideoTutorial.objects.all()
-#     return render(request, 'main/templates/index.html', {'video_tutorials': video_tutorials})
-
-
-# views.py
+    return render(request, 'register.html', {'form': form})
 
 def video_lessons(request):
     videos = Video.objects.all()
@@ -39,3 +30,7 @@ def video_lessons(request):
 def teachers_list(request):
     teachers = Teacher.objects.all()
     return render(request, 'teachers.html', {'teachers': teachers})
+
+
+def register_success(request):
+    return render(request, 'register_success.html')
