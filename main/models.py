@@ -4,6 +4,9 @@ class Video(models.Model):
     title = models.CharField(max_length=255)
     video_file = models.FileField(upload_to='videos/')
 
+    def __str__(self) -> str:
+        return self.title
+
 
 class Teacher(models.Model):
     name = models.CharField(max_length=100)
@@ -22,3 +25,14 @@ class CustomUser(models.Model):
 
     def __str__(self):
         return f'{self.name} {self.last_name}'
+    
+class Courses(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    format = models.CharField(max_length=50)
+    price = models.IntegerField()
+    age = models.CharField(max_length=30)
+    time = models.IntegerField()
+
+    def __str__(self) -> str:
+        return self.title

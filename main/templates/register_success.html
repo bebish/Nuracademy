@@ -3,9 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Подтверждение регистрации</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(55deg, #1f0455 0%, #330a5f 51%, #8f59c9 85%);
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #fdfbfb;
+        }
+
+        .confirmation-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .back-to-home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .back-to-home-button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1>Ждите подтверждения</h1>
+    <h1>Ырастоону күтүңүз</h1>
+    <div class="confirmation-container">
+        <p>Каттоо өтүнүчүңүз ийгиликтүү жөнөтүлдү. Администратордун ырастоосун күтүңүз.</p>
+    </div>
+    <a href="{% url 'home' %}" class="back-to-home-button">Башкы бетке кайтуу</a>
 </body>
 </html>
